@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 260 60% 55%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 220 14% 46%;
+
+    --accent: 261 73% 63%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 11%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 230 35% 7%;
+    --foreground: 210 20% 98%;
+
+    --card: 230 25% 10%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 230 25% 10%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 260 60% 55%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 215 27% 16%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27% 16%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 261 73% 63%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27% 16%;
+    --input: 215 27% 16%;
+    --ring: 216 12% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+  
+  .text-gradient-cosmic {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-fuchsia-500 to-indigo-500;
+  }
+  
+  .text-gradient-inline {
+    @apply bg-clip-text text-transparent;
+  }
+  
+  .glass-card {
+    @apply bg-background/80 backdrop-blur-md border border-border rounded-lg shadow-md;
+  }
+  
+  .cosmic-glow {
+    @apply relative after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-r after:from-primary/20 after:to-accent/20 after:blur-md after:-z-10;
+  }
+  
+  .cosmic-border {
+    @apply border border-transparent bg-gradient-to-r from-primary to-accent p-[1px] rounded-lg relative;
+  }
+  
+  .cosmic-border-content {
+    @apply bg-background rounded-[calc(theme(borderRadius.lg)-1px)] p-4 relative z-10;
+  }
+  
+  .btn-cosmic {
+    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium transition-all bg-background rounded-md hover:bg-white group;
+  }
+  
+  .btn-cosmic span {
+    @apply relative w-full text-left text-primary transition-colors duration-300 ease-in-out group-hover:text-accent;
+  }
+  
+  .btn-cosmic::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary to-accent opacity-0 transition duration-300 group-hover:opacity-10;
+  }
+  
+  .border-gradient-0 {
+    border-image: linear-gradient(to right, #3b82f6, #4f46e5) 1;
+  }
+  
+  .border-gradient-1 {
+    border-image: linear-gradient(to right, #10b981, #0d9488) 1;
+  }
+  
+  .border-gradient-2 {
+    border-image: linear-gradient(to right, #f59e0b, #ea580c) 1;
+  }
+  
+  .border-gradient-3 {
+    border-image: linear-gradient(to right, #ec4899, #e11d48) 1;
+  }
+  
+  .border-gradient-4 {
+    border-image: linear-gradient(to right, #a855f7, #8b5cf6) 1;
+  }
+  
+  .animate-typing {
+    overflow: hidden;
+    border-right: 3px solid;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end),
+               blink-caret 0.75s step-end infinite;
+    animation-fill-mode: forwards;
+  }
+  
+  .animate-width {
+    animation: width-grow 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    animation-fill-mode: both;
+  }
+  
+  .animate-colorful-text {
+    animation: color-cycle 8s infinite;
+  }
+  
+  .animate-rainbow {
+    background-size: 200% 200%;
+    animation: rainbow-move 3s linear infinite;
+  }
+  
+  .animate-focus-blur {
+    animation: focus-blur 5s ease-in-out infinite;
+  }
+  
+  .animate-bounce-text {
+    animation: bounce-text 2s ease-in-out infinite;
+  }
+}
+
+/* Special styles for particle elements */
+.star {
+  @apply absolute rounded-full bg-white opacity-70 animate-pulse-slow;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+}
+
+.planet {
+  @apply absolute rounded-full animate-spin-slow;
+  transform-origin: center center;
+}
+
+.orbit {
+  @apply absolute border rounded-full border-border/20 animate-spin-slow;
+  transform-origin: center center;
+}
+
+.cosmic-dot {
+  @apply w-1 h-1 rounded-full bg-accent animate-pulse-slow;
+}
+
+/* Timeline styles */
+.timeline-container {
+  @apply relative;
+}
+
+.timeline-line {
+  @apply absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary via-accent to-primary;
+}
+
+.timeline-item {
+  @apply relative flex justify-between items-center;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  @apply ml-auto mr-8 text-right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  @apply mr-auto ml-8;
+}
+
+.timeline-dot {
+  @apply absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full z-10;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/60 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
+
+/* Planet animations */
+.rotate-slow {
+  animation: rotate 20s linear infinite;
+}
+
+.rotate-medium {
+  animation: rotate 15s linear infinite;
+}
+
+.rotate-fast {
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Glow effects */
+.glow {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+              0 0 20px rgba(255, 255, 255, 0.3),
+              0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.glow-colored {
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+/* Text animation keyframes */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: theme('colors.primary.DEFAULT') }
+}
+
+@keyframes width-grow {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes color-cycle {
+  0% { color: theme('colors.blue.500') }
+  25% { color: theme('colors.purple.500') }
+  50% { color: theme('colors.pink.500') }
+  75% { color: theme('colors.rose.500') }
+  100% { color: theme('colors.blue.500') }
+}
+
+@keyframes rainbow-move {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+@keyframes focus-blur {
+  0% { filter: blur(0px) }
+  25% { filter: blur(1px) }
+  50% { filter: blur(0px) }
+  75% { filter: blur(1px) }
+  100% { filter: blur(0px) }
+}
+
+@keyframes bounce-text {
+  0%, 100% { transform: translateY(0) }
+  50% { transform: translateY(-10px) }
+}
+
+@keyframes slide-in {
+  from { 
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+}
