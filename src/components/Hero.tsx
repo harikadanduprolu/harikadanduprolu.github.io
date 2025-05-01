@@ -49,7 +49,7 @@ export function Hero() {
             
             <h1 className="font-bold">
               <span className={theme === 'cosmic' ? 'text-gradient-cosmic' : 'text-gradient'}>
-                John Doe
+                Harika Danduprolu
               </span>
             </h1>
             

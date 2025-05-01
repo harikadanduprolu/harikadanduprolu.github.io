@@ -5,7 +5,7 @@ import { useTheme } from '@/context/ThemeContext';
 
 export function About() {
   const { theme } = useTheme();
-  
+
   const skills = [
     { name: 'Python', icon: <Terminal className="w-5 h-5" />, level: 90 },
     { name: 'JavaScript', icon: <Code className="w-5 h-5" />, level: 85 },
@@ -71,50 +71,49 @@ export function About() {
             and creating beautiful, intuitive user experiences.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
             <h3 className="text-2xl font-semibold mb-4 animate-slide-in">My Journey</h3>
-            
+
             <div className="space-y-4">
               <p className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-                I'm currently pursuing my Bachelor's degree in Computer Science at Tech University,
-                where I'm focusing on artificial intelligence, web development, and <span className="text-gradient-inline bg-gradient-to-r from-primary to-accent">UX/UI design</span>.
+                I’m currently pursuing my B.Tech in Computer Science and Engineering at VNR VJIET, Hyderabad,
+                with interests spanning full-stack development, artificial intelligence, and problem-solving through design thinking.
               </p>
               <p className="animate-fade-in" style={{ animationDelay: '400ms' }}>
-                My fascination with computers and design began at an early age when I started tinkering with code
-                and building simple websites. This curiosity has evolved into a deep passion for creating
-                elegant solutions to complex problems with a focus on <span className="text-gradient-inline bg-gradient-to-r from-blue-500 to-purple-500">user-centered design</span>.
+                My journey began with a love for logic and creativity, which led me to competitive programming and building real-world applications
+                through hackathons and projects like BioBlock and Flashcard Learning Tool.
               </p>
               <p className="animate-fade-in" style={{ animationDelay: '600ms' }}>
-                Outside of academics, I enjoy participating in hackathons, contributing to open-source
-                projects, and exploring the latest technologies in the field of computer science and digital design.
+                When I’m not coding, I lead initiatives at Google Developer Groups, explore design via Figma,
+                and contribute to community-based tech solutions that empower rural and underserved areas.
               </p>
             </div>
-            
+
             <div className="pt-4 space-y-2">
               <div className="flex items-center animate-slide-in" style={{ animationDelay: '200ms' }}>
                 <span className="font-medium">Name:</span>
-                <span className="ml-2">John Doe</span>
+                <span className="ml-2">Harika Danduprolu</span>
               </div>
               <div className="flex items-center animate-slide-in" style={{ animationDelay: '300ms' }}>
                 <span className="font-medium">Email:</span>
-                <span className="ml-2">john.doe@example.com</span>
+                <span className="ml-2">harikadanduprolu740@gmail.com</span>
               </div>
               <div className="flex items-center animate-slide-in" style={{ animationDelay: '400ms' }}>
                 <span className="font-medium">Education:</span>
-                <span className="ml-2">B.Sc. Computer Science (In Progress)</span>
+                <span className="ml-2">B.Tech in Computer Science (2022–2026)</span>
               </div>
               <div className="flex items-center animate-slide-in" style={{ animationDelay: '500ms' }}>
                 <span className="font-medium">Location:</span>
-                <span className="ml-2">San Francisco, CA</span>
+                <span className="ml-2">Hyderabad, India</span>
               </div>
             </div>
           </div>
-          
+
           <div className="glass-card p-6 animate-fade-in" style={{ animationDelay: '200ms' }}>
             <h3 className="text-2xl font-semibold mb-6 animate-slide-in">Skills & Expertise</h3>
-            
+
             <div className="space-y-6">
               {skills.map((skill, index) => (
                 <div key={skill.name} className="space-y-2 animate-slide-in" style={{ animationDelay: `${200 + index * 100}ms` }}>
@@ -125,9 +124,9 @@ export function About() {
                     </div>
                     <span className="text-sm text-muted-foreground">{skill.level}%</span>
                   </div>
-                  
+
                   <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                    <div 
+                    <div
                       className="h-full bg-gradient-to-r from-primary to-accent rounded-full transform transition-all duration-1000 animate-width"
                       style={{ width: `${skill.level}%`, animationDelay: `${400 + index * 100}ms` }}
                     ></div>
