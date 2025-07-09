@@ -18,7 +18,19 @@ export function About() {
   ];
   
   return (
-    <section id="about" className="py-20 relative">
+    <section
+    id="about"
+    className="py-20 flex justify-center items-center"
+  >
+    <div
+      className={`w-full max-w-6xl px-8 py-12 rounded-2xl border border-white/20 shadow-xl transition-colors duration-1000
+        ${
+          theme === 'cosmic'
+            ? 'bg-[rgba(0,0,0,0.6)] backdrop-blur-md'
+            : 'bg-[rgba(0, 0, 0, 0.1)] backdrop-blur-md'
+        }`}
+    >
+
       {theme === 'cosmic' && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/3 right-1/5 w-32 h-32 rounded-full bg-primary/10 blur-xl animate-pulse-slow"></div>
@@ -110,6 +122,7 @@ export function About() {
               </div>
             </div>
           </div>
+          
 
           <div className="glass-card p-6 animate-fade-in" style={{ animationDelay: '200ms' }}>
             <h3 className="text-2xl font-semibold mb-6 animate-slide-in">Skills & Expertise</h3>
@@ -136,6 +149,7 @@ export function About() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
