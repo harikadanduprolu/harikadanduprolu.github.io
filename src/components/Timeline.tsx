@@ -85,65 +85,10 @@ export function Timeline() {
   
   return (
     <section id="timeline" className="py-20 relative">
-      {theme === 'cosmic' && (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/5 right-1/4 w-32 h-32 rounded-full bg-violet-500/10 blur-xl animate-pulse-slow"></div>
-          <div className="absolute bottom-1/5 left-1/5 w-40 h-40 rounded-full bg-indigo-500/10 blur-xl animate-pulse-slow" style={{ animationDelay: '2.5s' }}></div>
-          
-          {/* Solar System Animation */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-30 pointer-events-none">
-            {/* Sun */}
-            <div className="absolute left-1/2 top-1/2 w-16 h-16 rounded-full bg-yellow-500 -translate-x-1/2 -translate-y-1/2 animate-pulse-slow glow"></div>
-            
-            {/* Mercury Orbit */}
-            <div className="orbit absolute left-1/2 top-1/2 w-[100px] h-[100px] -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full" style={{ animationDuration: '10s' }}></div>
-            <div className="planet absolute left-[calc(50%-50px)] top-1/2 w-2 h-2 rounded-full bg-gray-300" style={{ animationDuration: '10s' }}></div>
-            
-            {/* Venus Orbit */}
-            <div className="orbit absolute left-1/2 top-1/2 w-[150px] h-[150px] -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full" style={{ animationDuration: '15s' }}></div>
-            <div className="planet absolute left-[calc(50%-75px)] top-1/2 w-3 h-3 rounded-full bg-amber-400" style={{ animationDuration: '15s' }}></div>
-            
-            {/* Earth Orbit */}
-            <div className="orbit absolute left-1/2 top-1/2 w-[200px] h-[200px] -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full" style={{ animationDuration: '20s' }}></div>
-            <div className="planet absolute left-[calc(50%-100px)] top-1/2 w-4 h-4 rounded-full bg-blue-400" style={{ animationDuration: '20s' }}></div>
-            
-            {/* Mars Orbit */}
-            <div className="orbit absolute left-1/2 top-1/2 w-[250px] h-[250px] -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full" style={{ animationDuration: '25s' }}></div>
-            <div className="planet absolute left-[calc(50%-125px)] top-1/2 w-3 h-3 rounded-full bg-red-500" style={{ animationDuration: '25s' }}></div>
-            
-            {/* Jupiter Orbit */}
-            <div className="orbit absolute left-1/2 top-1/2 w-[320px] h-[320px] -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full" style={{ animationDuration: '30s' }}></div>
-            <div className="planet absolute left-[calc(50%-160px)] top-1/2 w-8 h-8 rounded-full bg-amber-600" style={{ animationDuration: '30s' }}></div>
-            
-            {/* Saturn Orbit */}
-            <div className="orbit absolute left-1/2 top-1/2 w-[400px] h-[400px] -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full" style={{ animationDuration: '35s' }}></div>
-            <div className="planet absolute left-[calc(50%-200px)] top-1/2 w-7 h-7 rounded-full bg-yellow-700" style={{ animationDuration: '35s' }}></div>
-            
-            {/* Random stars */}
-            {Array.from({ length: 20 }).map((_, index) => (
-              <div 
-                key={index}
-                className="star"
-                style={{
-                  width: `${Math.random() * 2 + 1}px`,
-                  height: `${Math.random() * 2 + 1}px`,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 3}s`,
-                }}
-              ></div>
-            ))}
-          </div>
-        </div>
-      )}
-      
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="inline-block relative mb-4">
-            <span className={theme === 'cosmic' ? 'text-gradient-cosmic animate-pulse-slow' : 'text-gradient animate-pulse-slow'}>Career Timeline</span>
-            {theme === 'cosmic' && (
-              <span className="absolute -top-3 -right-5 w-3 h-3 rounded-full bg-accent animate-pulse-slow"></span>
-            )}
+            <span className="text-gradient animate-pulse-slow">Career Timeline</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6 rounded-full animate-width"></div>
           <p className="max-w-2xl mx-auto text-lg opacity-80 animate-fade-in">
@@ -161,9 +106,6 @@ export function Timeline() {
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className={`timeline-dot bg-gradient-to-r ${item.color}`}>
-                {theme === 'cosmic' && (
-                  <div className="absolute inset-0 bg-accent/50 rounded-full animate-ping"></div>
-                )}
               </div>
               
               <div className={`timeline-content glass-card p-6 max-w-lg ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'} border-t-4 border-gradient-${index} hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>

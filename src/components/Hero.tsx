@@ -9,7 +9,9 @@ export function Hero() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return;
+      if (!containerRef.current) {
+        return;
+      }
       const { left, top, width, height } = containerRef.current.getBoundingClientRect();
       const x = (e.clientX - left) / width - 0.5;
       const y = (e.clientY - top) / height - 0.5;
@@ -25,13 +27,6 @@ export function Hero() {
 
   return (
     <section id="hero" className="min-h-screen relative flex items-center justify-center py-16 overflow-hidden">
-      {theme === 'cosmic' && (
-        <>
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-radial from-indigo-900/30 to-transparent rounded-full blur-3xl animate-spin-slow z-0" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-radial from-fuchsia-600/20 to-transparent rounded-full blur-3xl animate-ping z-0" />
-        </>
-      )}
-
       <div ref={containerRef} className="section-container transition-transform duration-300 ease-out z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
@@ -41,11 +36,7 @@ export function Hero() {
             </div>
 
             <h1 className="font-extrabold text-4xl sm:text-5xl md:text-6xl relative z-10">
-              <span className={`inline-block bg-clip-text text-transparent animate-text-glow ${
-                theme === 'cosmic'
-                  ? 'bg-gradient-to-r from-indigo-400 via-fuchsia-500 to-pink-500'
-                  : 'bg-gradient-to-r from-primary to-accent'
-              }`}>
+              <span className="inline-block bg-clip-text text-transparent animate-text-glow bg-gradient-to-r from-primary to-accent">
                 Harika Danduprolu
               </span>
             </h1>
@@ -60,7 +51,7 @@ export function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="cosmic-glow" size="lg">
+              <Button size="lg">
                 View Projects
               </Button>
               <Button variant="outline" size="lg">
@@ -77,8 +68,8 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="cosmic-border animate-fade-in">
-            <div className="cosmic-border-content flex justify-center">
+          <div className="animate-fade-in">
+            <div className="flex justify-center">
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-2 border-primary/40 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.1)] bg-white/10 transition-transform duration-300 hover:scale-105">
                 {/* Replace the src with your actual image path */}
                 <img 
@@ -88,12 +79,6 @@ export function Hero() {
                 />
                 {/* Fallback overlay if image doesn't load */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/60 to-accent/70 opacity-20"></div>
-                {theme === 'cosmic' && (
-                  <>
-                    <div className="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-violet-500 blur-sm opacity-60 animate-pulse-slow"></div>
-                    <div className="absolute -bottom-4 -right-4 w-12 h-12 rounded-full bg-indigo-500 blur-sm opacity-60 animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
-                  </>
-                )}
               </div>
             </div>
           </div>

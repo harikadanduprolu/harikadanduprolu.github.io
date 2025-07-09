@@ -9,12 +9,6 @@ export function Footer() {
   
   return (
     <footer className="py-12 relative">
-      {theme === 'cosmic' && (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-primary/5 to-transparent"></div>
-        </div>
-      )}
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center">
           <a 
@@ -56,7 +50,7 @@ export function Footer() {
           
           <div className="text-center text-muted-foreground">
             <p>&copy; {year} John Doe. All rights reserved.</p>
-            <p className="text-sm mt-2">Designed and developed with cosmic inspiration.</p>
+            <p className="text-sm mt-2">Designed and developed with passion.</p>
           </div>
         </div>
       </div>

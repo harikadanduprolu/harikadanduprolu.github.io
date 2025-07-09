@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'light' | 'dark' | 'cosmic';
+type Theme = 'light' | 'dark';
 
 interface ThemeContextType {
   theme: Theme;
@@ -27,11 +27,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('theme', theme);
     
     const root = window.document.documentElement;
-    root.classList.remove('light', 'dark', 'cosmic');
+    root.classList.remove('light', 'dark');
     
-    if (theme === 'cosmic') {
+    if (theme === 'dark') {
       root.classList.add('dark');
-      root.classList.add('cosmic');
     } else {
       root.classList.add(theme);
     }

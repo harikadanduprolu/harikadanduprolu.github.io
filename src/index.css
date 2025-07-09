@@ -106,40 +106,12 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
   
-  .text-gradient-cosmic {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-fuchsia-500 to-indigo-500;
-  }
-  
   .text-gradient-inline {
     @apply bg-clip-text text-transparent;
   }
   
   .glass-card {
     @apply bg-background/80 backdrop-blur-md border border-border rounded-lg shadow-md;
-  }
-  
-  .cosmic-glow {
-    @apply relative after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-r after:from-primary/20 after:to-accent/20 after:blur-md after:-z-10;
-  }
-  
-  .cosmic-border {
-    @apply border border-transparent bg-gradient-to-r from-primary to-accent p-[1px] rounded-lg relative;
-  }
-  
-  .cosmic-border-content {
-    @apply bg-background rounded-[calc(theme(borderRadius.lg)-1px)] p-4 relative z-10;
-  }
-  
-  .btn-cosmic {
-    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium transition-all bg-background rounded-md hover:bg-white group;
-  }
-  
-  .btn-cosmic span {
-    @apply relative w-full text-left text-primary transition-colors duration-300 ease-in-out group-hover:text-accent;
-  }
-  
-  .btn-cosmic::before {
-    @apply content-[''] absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary to-accent opacity-0 transition duration-300 group-hover:opacity-10;
   }
   
   .border-gradient-0 {
@@ -200,19 +172,7 @@
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 }
 
-.planet {
-  @apply absolute rounded-full animate-spin-slow;
-  transform-origin: center center;
-}
 
-.orbit {
-  @apply absolute border rounded-full border-border/20 animate-spin-slow;
-  transform-origin: center center;
-}
-
-.cosmic-dot {
-  @apply w-1 h-1 rounded-full bg-accent animate-pulse-slow;
-}
 
 /* Timeline styles */
 .timeline-container {
@@ -254,24 +214,6 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary;
-}
-
-/* Planet animations */
-.rotate-slow {
-  animation: rotate 20s linear infinite;
-}
-
-.rotate-medium {
-  animation: rotate 15s linear infinite;
-}
-
-.rotate-fast {
-  animation: rotate 10s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 /* Glow effects */

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Moon, Sun, Star } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 
 export function ThemeToggle() {
@@ -10,8 +10,6 @@ export function ThemeToggle() {
   const toggleTheme = () => {
     if (theme === 'light') {
       setTheme('dark');
-    } else if (theme === 'dark') {
-      setTheme('cosmic');
     } else {
       setTheme('light');
     }
@@ -26,7 +24,6 @@ export function ThemeToggle() {
     >
       {theme === 'light' && <Sun className="h-5 w-5 animate-fade-in" />}
       {theme === 'dark' && <Moon className="h-5 w-5 animate-fade-in" />}
-      {theme === 'cosmic' && <Star className="h-5 w-5 animate-fade-in text-accent" />}
       <span className="sr-only">Toggle theme</span>
     </Button>
   );

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 import { useToast } from '@/components/ui/use-toast';
+import emailjs from '@emailjs/browser';
 
 export function Contact() {
   const { theme } = useTheme();
@@ -15,6 +16,11 @@ export function Contact() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // EmailJS configuration
+  const EMAIL_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAIL_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const EMAIL_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -25,42 +31,70 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Check if EmailJS is configured
+    if (!EMAIL_SERVICE_ID || !EMAIL_TEMPLATE_ID || !EMAIL_PUBLIC_KEY) {
+      console.error('EmailJS configuration is missing. Please check your .env file.');
+      
+      toast({
+        title: "Email service not configured",
+        description: "Please contact me directly at harikadanduprolu740@gmail.com",
+        variant: "destructive",
+      });
+      
+      setIsSubmitting(false);
+      return;
+    }
     
-    console.log('Form data submitted:', formData);
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    
-    setIsSubmitting(false);
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        EMAIL_SERVICE_ID,
+        EMAIL_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Harika', // Your name
+          to_email: 'harikadanduprolu740@gmail.com', // Your email
+        },
+        EMAIL_PUBLIC_KEY
+      );
+
+      console.log('Email sent successfully:', result);
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly at harikadanduprolu740@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
     <section id="contact" className="py-20 relative">
-      {theme === 'cosmic' && (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 right-1/4 w-40 h-40 rounded-full bg-violet-500/10 blur-xl animate-pulse-slow"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-32 h-32 rounded-full bg-indigo-500/10 blur-xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        </div>
-      )}
-      
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="inline-block relative mb-4">
-            <span className={theme === 'cosmic' ? 'text-gradient-cosmic' : 'text-gradient'}>Get In Touch</span>
-            {theme === 'cosmic' && (
-              <span className="absolute -top-3 -right-5 w-3 h-3 rounded-full bg-accent animate-pulse-slow"></span>
-            )}
+            <span className="text-gradient">Get In Touch</span>
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6 rounded-full"></div>
           <p className="max-w-2xl mx-auto text-lg opacity-80">
@@ -79,7 +113,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Email</h4>
-                  <p className="text-muted-foreground">john.doe@example.com</p>
+                  <p className="text-muted-foreground">harikadanduprolu740@gmail.com</p>
                 </div>
               </div>
               
@@ -89,7 +123,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Phone</h4>
-                  <p className="text-muted-foreground">+1 (123) 456-7890</p>
+                  <p className="text-muted-foreground">+91 82474 59086</p>
                 </div>
               </div>
               
@@ -99,7 +133,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Location</h4>
-                  <p className="text-muted-foreground">San Francisco, California</p>
+                  <p className="text-muted-foreground">Aparna Sarovar Zenith, Hyderabad</p>
                 </div>
               </div>
             </div>
@@ -205,7 +239,7 @@ export function Contact() {
               
               <Button 
                 type="submit" 
-                className="w-full cosmic-glow" 
+                className="w-full" 
                 size="lg"
                 disabled={isSubmitting}
               >

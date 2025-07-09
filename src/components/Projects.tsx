@@ -41,7 +41,7 @@ export function Projects() {
     },
     {
       id: 4,
-      title: 'Cosmic Weather Dashboard',
+      title: 'Weather Dashboard',
       description: 'Visualizing weather data with interactive charts',
       category: 'web',
       image: 'https://via.placeholder.com/600x400/9980FA/FFFFFF',
@@ -90,20 +90,10 @@ export function Projects() {
   
   return (
     <section id="projects" className="py-20 relative">
-      {theme === 'cosmic' && (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/3 w-40 h-40 rounded-full bg-violet-500/10 blur-xl animate-pulse-slow"></div>
-          <div className="absolute bottom-1/3 right-1/5 w-32 h-32 rounded-full bg-indigo-500/10 blur-xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        </div>
-      )}
-      
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="inline-block relative mb-4">
-            <span className={theme === 'cosmic' ? 'text-gradient-cosmic' : 'text-gradient'}>My Projects</span>
-            {theme === 'cosmic' && (
-              <span className="absolute -top-3 -right-5 w-3 h-3 rounded-full bg-accent animate-pulse-slow"></span>
-            )}
+            <span className="text-gradient">My Projects</span>
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6 rounded-full"></div>
           <p className="max-w-2xl mx-auto text-lg opacity-80">

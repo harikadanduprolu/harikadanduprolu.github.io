@@ -8,10 +8,14 @@ export function ParticleBackground() {
   
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas) {
+      return;
+    }
     
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) {
+      return;
+    }
     
     // Set canvas size
     const setCanvasSize = () => {
@@ -137,9 +141,7 @@ export function ParticleBackground() {
         this.size = Math.random() * 2 + 0.5;
         this.speedX = Math.random() * 0.2 - 0.1;
         this.speedY = Math.random() * 0.2 - 0.1;
-        this.color = theme === 'cosmic' 
-          ? `hsl(${Math.random() * 60 + 240}, 50%, 80%)`
-          : theme === 'dark' 
+        this.color = theme === 'dark' 
             ? 'rgba(255, 255, 255, 0.5)'
             : 'rgba(100, 100, 150, 0.3)';
       }
@@ -148,8 +150,8 @@ export function ParticleBackground() {
         this.x += this.speedX;
         this.y += this.speedY;
         
-        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        if (this.x < 0 || this.x > canvas.width) {this.speedX *= -1};
+        if (this.y < 0 || this.y > canvas.height) {this.speedY *= -1};
       }
       
       draw() {
@@ -226,42 +228,39 @@ export function ParticleBackground() {
         particle.draw();
       });
       
-      // Connect particles with lines if cosmic theme
-      if (theme === 'cosmic') {
-        connectParticles();
-      }
-      
-      // Draw solar system
-      const centerX = canvas.width / 2;
-      const centerY = canvas.height / 2;
-      
-      // Draw sun
-      const sunGlow = ctx.createRadialGradient(
-        centerX, centerY, 0,
-        centerX, centerY, sun.radius * 2
-      );
-      sunGlow.addColorStop(0, 'rgba(253, 184, 19, 1)');
-      sunGlow.addColorStop(0.5, 'rgba(253, 184, 19, 0.5)');
-      sunGlow.addColorStop(1, 'rgba(253, 184, 19, 0)');
-      
-      ctx.beginPath();
-      ctx.fillStyle = sunGlow;
-      ctx.arc(centerX, centerY, sun.radius * 2, 0, Math.PI * 2);
-      ctx.fill();
-      
-      ctx.beginPath();
-      ctx.fillStyle = sun.color;
-      ctx.arc(centerX, centerY, sun.radius, 0, Math.PI * 2);
-      ctx.fill();
-      
-      // Update and draw planets (except sun)
-      for (let i = 1; i < planets.length; i++) {
-        planets[i].update(centerX, centerY);
-        planets[i].draw(ctx);
+      // Draw solar system (only in dark theme)
+      if (theme === 'dark') {
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
         
-        // Draw Saturn's rings
-        if (i === 6) { // Saturn
-          drawSaturnRings(planets[i], ctx);
+        // Draw sun
+        const sunGlow = ctx.createRadialGradient(
+          centerX, centerY, 0,
+          centerX, centerY, sun.radius * 2
+        );
+        sunGlow.addColorStop(0, 'rgba(253, 184, 19, 1)');
+        sunGlow.addColorStop(0.5, 'rgba(253, 184, 19, 0.5)');
+        sunGlow.addColorStop(1, 'rgba(253, 184, 19, 0)');
+        
+        ctx.beginPath();
+        ctx.fillStyle = sunGlow;
+        ctx.arc(centerX, centerY, sun.radius * 2, 0, Math.PI * 2);
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.fillStyle = sun.color;
+        ctx.arc(centerX, centerY, sun.radius, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Update and draw planets (except sun)
+        for (let i = 1; i < planets.length; i++) {
+          planets[i].update(centerX, centerY);
+          planets[i].draw(ctx);
+          
+          // Draw Saturn's rings
+          if (i === 6) { // Saturn
+            drawSaturnRings(planets[i], ctx);
+          }
         }
       }
       

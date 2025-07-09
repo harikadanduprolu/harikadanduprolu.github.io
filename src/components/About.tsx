@@ -22,60 +22,12 @@ export function About() {
     id="about"
     className="py-20 flex justify-center items-center"
   >
-    <div
-      className={`w-full max-w-6xl px-8 py-12 rounded-2xl border border-white/20 shadow-xl transition-colors duration-1000
-        ${
-          theme === 'cosmic'
-            ? 'bg-[rgba(0,0,0,0.6)] backdrop-blur-md'
-            : 'bg-[rgba(0, 0, 0, 0.1)] backdrop-blur-md'
-        }`}
-    >
-
-      {theme === 'cosmic' && (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/3 right-1/5 w-32 h-32 rounded-full bg-primary/10 blur-xl animate-pulse-slow"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-40 h-40 rounded-full bg-accent/10 blur-xl animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
-          
-          {/* Solar System Animation */}
-          <div className="absolute left-1/4 top-1/2 w-[300px] h-[300px] opacity-20 pointer-events-none">
-            {/* Sun */}
-            <div className="absolute left-1/2 top-1/2 w-12 h-12 rounded-full bg-yellow-500 -translate-x-1/2 -translate-y-1/2 animate-pulse-slow glow"></div>
-            
-            {/* Planet Orbits */}
-            <div className="orbit absolute left-1/2 top-1/2 w-[120px] h-[120px] -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full" style={{ animationDuration: '12s' }}></div>
-            <div className="planet absolute left-[calc(50%-60px)] top-1/2 w-3 h-3 rounded-full bg-blue-400" style={{ animationDuration: '12s' }}></div>
-            
-            <div className="orbit absolute left-1/2 top-1/2 w-[180px] h-[180px] -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full" style={{ animationDuration: '18s' }}></div>
-            <div className="planet absolute left-[calc(50%-90px)] top-1/2 w-5 h-5 rounded-full bg-red-500" style={{ animationDuration: '18s' }}></div>
-            
-            <div className="orbit absolute left-1/2 top-1/2 w-[250px] h-[250px] -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full" style={{ animationDuration: '25s' }}></div>
-            <div className="planet absolute left-[calc(50%-125px)] top-1/2 w-6 h-6 rounded-full bg-green-500" style={{ animationDuration: '25s' }}></div>
-            
-            {/* Random stars */}
-            {Array.from({ length: 15 }).map((_, index) => (
-              <div 
-                key={index}
-                className="star"
-                style={{
-                  width: `${Math.random() * 2 + 1}px`,
-                  height: `${Math.random() * 2 + 1}px`,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 3}s`,
-                }}
-              ></div>
-            ))}
-          </div>
-        </div>
-      )}
+    <div className="w-full max-w-6xl px-8 py-12 rounded-2xl border border-white/20 shadow-xl transition-colors duration-1000 bg-[rgba(0, 0, 0, 0.1)] backdrop-blur-md">
       
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="inline-block relative mb-4">
-            <span className={theme === 'cosmic' ? 'text-gradient-cosmic animate-pulse-slow' : 'text-gradient animate-pulse-slow'}>About Me</span>
-            {theme === 'cosmic' && (
-              <span className="absolute -top-3 -right-5 w-3 h-3 rounded-full bg-accent animate-pulse-slow"></span>
-            )}
+            <span className="text-gradient animate-pulse-slow">About Me</span>
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6 rounded-full animate-width"></div>
           <p className="max-w-2xl mx-auto text-lg opacity-80 animate-typing">
