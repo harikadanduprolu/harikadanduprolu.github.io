@@ -26,7 +26,8 @@ export function ParticleBackground() {
     setCanvasSize();
     window.addEventListener('resize', setCanvasSize);
     
-    // Solar system planets
+    // Solar system planets - COMMENTED OUT
+    /*
     class Planet {
       x: number;
       y: number;
@@ -57,12 +58,8 @@ export function ParticleBackground() {
         this.moons.forEach(moon => moon.update(this.x, this.y));
       }
       
-      draw(ctx: CanvasRenderingContext2D) {
-        // Draw orbit
-        ctx.beginPath();
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
-        ctx.arc(canvas.width / 2, canvas.height / 2, this.distance, 0, Math.PI * 2);
-        ctx.stroke();
+      draw(ctx: CanvasRenderingContext2D, centerX: number, centerY: number) {
+        // Orbit drawing removed for cleaner appearance
         
         // Draw planet
         ctx.beginPath();
@@ -92,7 +89,10 @@ export function ParticleBackground() {
         return moon;
       }
     }
+    */
     
+    // Moon class - COMMENTED OUT
+    /*
     class Moon {
       distance: number;
       radius: number;
@@ -125,6 +125,7 @@ export function ParticleBackground() {
         ctx.fill();
       }
     }
+    */
     
     // Particle class for stars
     class Particle {
@@ -170,7 +171,8 @@ export function ParticleBackground() {
       particles.push(new Particle());
     }
     
-    // Create solar system
+    // Create solar system - COMMENTED OUT
+    /*
     const sun = new Planet(0, 25, '#FDB813', 0);
     
     // Create planets
@@ -189,8 +191,10 @@ export function ParticleBackground() {
     planets[4].addMoon(15, 1, '#DDDDDD', 0.03); // Mars' moon
     planets[5].addMoon(30, 3, '#DDDDDD', 0.01); // Jupiter's moon 1
     planets[5].addMoon(40, 2, '#DDDDDD', 0.015); // Jupiter's moon 2
+    */
     
-    // Add rings to Saturn
+    // Add rings to Saturn - COMMENTED OUT
+    /*
     const drawSaturnRings = (planet: Planet, ctx: CanvasRenderingContext2D) => {
       const ringStart = planet.radius + 5;
       const ringEnd = planet.radius + 25;
@@ -215,6 +219,7 @@ export function ParticleBackground() {
       
       ctx.restore();
     };
+    */
     
     // Animation
     let animationFrameId: number;
@@ -228,15 +233,23 @@ export function ParticleBackground() {
         particle.draw();
       });
       
-      // Draw solar system (only in dark theme)
+      // Draw solar system (only in dark theme) - COMMENTED OUT
+      /*
       if (theme === 'dark') {
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
+        // Calculate position for sun to be below profile image
+        // On desktop (lg+): profile image is in right column, so place sun at 3/4 width
+        // On mobile: profile image is centered, so place sun at center
+        const isDesktop = canvas.width >= 1024; // lg breakpoint
+        const sunX = isDesktop ? (canvas.width * 0.75) : (canvas.width / 2);
+        
+        // Position sun below the center of the image area
+        // Profile image area is roughly in the middle third of the screen
+        const sunY = canvas.height * 0.65; // Slightly below center to account for image position
         
         // Draw sun
         const sunGlow = ctx.createRadialGradient(
-          centerX, centerY, 0,
-          centerX, centerY, sun.radius * 2
+          sunX, sunY, 0,
+          sunX, sunY, sun.radius * 2
         );
         sunGlow.addColorStop(0, 'rgba(253, 184, 19, 1)');
         sunGlow.addColorStop(0.5, 'rgba(253, 184, 19, 0.5)');
@@ -244,18 +257,18 @@ export function ParticleBackground() {
         
         ctx.beginPath();
         ctx.fillStyle = sunGlow;
-        ctx.arc(centerX, centerY, sun.radius * 2, 0, Math.PI * 2);
+        ctx.arc(sunX, sunY, sun.radius * 2, 0, Math.PI * 2);
         ctx.fill();
         
         ctx.beginPath();
         ctx.fillStyle = sun.color;
-        ctx.arc(centerX, centerY, sun.radius, 0, Math.PI * 2);
+        ctx.arc(sunX, sunY, sun.radius, 0, Math.PI * 2);
         ctx.fill();
         
         // Update and draw planets (except sun)
         for (let i = 1; i < planets.length; i++) {
-          planets[i].update(centerX, centerY);
-          planets[i].draw(ctx);
+          planets[i].update(sunX, sunY);
+          planets[i].draw(ctx, sunX, sunY);
           
           // Draw Saturn's rings
           if (i === 6) { // Saturn
@@ -263,6 +276,7 @@ export function ParticleBackground() {
           }
         }
       }
+      */
       
       animationFrameId = requestAnimationFrame(animate);
     };

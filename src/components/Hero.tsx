@@ -32,20 +32,20 @@ export function Hero() {
           <div className="space-y-6 animate-fade-in">
             <div className="flex items-center space-x-2">
               <div className="w-12 h-0.5 bg-primary"></div>
-              <p className="text-lg font-medium opacity-80">Hello, I'm</p>
+              <p className="font-body-medium text-lg opacity-80">Hello, I'm</p>
             </div>
 
-            <h1 className="font-extrabold text-4xl sm:text-5xl md:text-6xl relative z-10">
+            <h1 className="font-display-large text-4xl sm:text-5xl md:text-6xl lg:text-6xl relative z-10">
               <span className="inline-block bg-clip-text text-transparent animate-text-glow bg-gradient-to-r from-primary to-accent">
                 Harika Danduprolu
               </span>
             </h1>
 
-            <h2 className="text-2xl sm:text-3xl font-medium">
+            <h2 className="font-display-medium text-2xl sm:text-3xl">
               Computer Science Student & Developer
             </h2>
 
-            <p className="text-lg opacity-80 max-w-xl">
+            <p className="font-body-elegant text-lg opacity-90 max-w-xl leading-relaxed">
               Passionate about coding, AI, and solving complex problems. 
               Building innovative solutions for tomorrow's challenges.
             </p>
@@ -84,12 +84,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-          <a href="#about" className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors">
-            <span className="mb-2 text-sm">Scroll Down</span>
-            <ArrowDown className="w-5 h-5" />
-          </a>
-        </div>
+       
       </div>
     </section>
   );
