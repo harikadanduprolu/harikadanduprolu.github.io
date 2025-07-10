@@ -73,7 +73,7 @@ export function Hero() {
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-2 border-primary/40 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.1)] bg-white/10 transition-transform duration-300 hover:scale-105">
                 {/* Replace the src with your actual image path */}
                 <img 
-                  src="/src/images/your-profile-image.jpg" 
+                  src="https://i.pinimg.com/1200x/b8/fd/69/b8fd69e40c45f9b07ca1b622313630e2.jpg" 
                   alt="Harika Danduprolu" 
                   className="w-full h-full object-cover"
                 />
