@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "homepage": "https://harikadanduprolu.github.io"
+    "homepage": "https://harikadanduprolu.me"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
