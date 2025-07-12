@@ -1,8 +1,20 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "harika-danduprolu-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Portfolio website of Harika Danduprolu - Computer Science Student & Developer",
+  "homepage": "https://harikadanduprolu.me",
+  "author": {
+    "name": "Harika Danduprolu",
+    "email": "harikadanduprolu740@gmail.com",
+    "url": "https://harikadanduprolu.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harikadanduprolu/portfolio"
+  },
+  "keywords": ["portfolio", "react", "typescript", "vite", "tailwindcss", "computer-science", "developer"],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
