@@ -42,12 +42,12 @@ export function Hero() {
             </h1>
 
             <h2 className="font-display-medium text-2xl sm:text-3xl">
-              Computer Science Student & Developer
+              Software Engineer | Backend Systems & Distributed Computing
             </h2>
 
             <p className="font-body-elegant text-lg opacity-90 max-w-xl leading-relaxed">
-              Passionate about coding, AI, and solving complex problems. 
-              Building innovative solutions for tomorrow's challenges.
+              Building scalable, real-time backend systems with focus on reliability, performance, and production behavior. 
+              Experienced in distributed systems, data flow optimization, and designing maintainable architectures.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -60,11 +60,12 @@ export function Hero() {
             </div>
 
             <div className="flex items-center space-x-4 pt-2">
-              {[Github, Linkedin, Twitter].map((Icon, index) => (
-                <a key={index} href="#" className="group text-muted-foreground hover:text-primary transition-colors">
-                  <Icon className="w-5 h-5 group-hover:scale-125 transition-transform duration-300" />
-                </a>
-              ))}
+              <a href="https://github.com/harikadanduprolu" target="_blank" rel="noopener noreferrer" className="group text-muted-foreground hover:text-primary transition-colors">
+                <Github className="w-5 h-5 group-hover:scale-125 transition-transform duration-300" />
+              </a>
+              <a href="https://www.linkedin.com/in/harika-danduprolu/" target="_blank" rel="noopener noreferrer" className="group text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin className="w-5 h-5 group-hover:scale-125 transition-transform duration-300" />
+              </a>
             </div>
           </div>
 

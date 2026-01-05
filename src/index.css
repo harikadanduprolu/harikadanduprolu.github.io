@@ -310,9 +310,20 @@
 }
 
 @keyframes width-grow {
-  from { width: 0 }
-  to { width: 100% }
+  from { width: 0% }
+  to { width: var(--target-width, 100%) }
 }
+
+/* Skill bar animations */
+@keyframes width-grow-92 { from { width: 0% } to { width: 92% } }
+@keyframes width-grow-90 { from { width: 0% } to { width: 90% } }
+@keyframes width-grow-88 { from { width: 0% } to { width: 88% } }
+@keyframes width-grow-87 { from { width: 0% } to { width: 87% } }
+@keyframes width-grow-86 { from { width: 0% } to { width: 86% } }
+@keyframes width-grow-85 { from { width: 0% } to { width: 85% } }
+@keyframes width-grow-84 { from { width: 0% } to { width: 84% } }
+@keyframes width-grow-82 { from { width: 0% } to { width: 82% } }
+@keyframes width-grow-78 { from { width: 0% } to { width: 78% } }
 
 @keyframes color-cycle {
   0% { color: theme('colors.blue.500') }

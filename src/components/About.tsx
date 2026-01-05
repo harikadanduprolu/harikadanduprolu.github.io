@@ -7,14 +7,16 @@ export function About() {
   const { theme } = useTheme();
 
   const skills = [
-    { name: 'Python', icon: <Terminal className="w-5 h-5" />, level: 90 },
-    { name: 'JavaScript', icon: <Code className="w-5 h-5" />, level: 85 },
-    { name: 'React', icon: <Globe className="w-5 h-5" />, level: 80 },
-    { name: 'UI/UX Design', icon: <Palette className="w-5 h-5" />, level: 85 },
-    { name: 'Figma', icon: <Figma className="w-5 h-5" />, level: 80 },
-    { name: 'Node.js', icon: <Server className="w-5 h-5" />, level: 75 },
-    { name: 'SQL', icon: <Database className="w-5 h-5" />, level: 70 },
-    { name: 'Machine Learning', icon: <Brain className="w-5 h-5" />, level: 65 },
+    { name: 'Python', icon: <Terminal className="w-5 h-5" />, level: 92 },
+    { name: 'JavaScript', icon: <Code className="w-5 h-5" />, level: 90 },
+    { name: 'Java (OOP)', icon: <Code className="w-5 h-5" />, level: 85 },
+    { name: 'React & Node.js', icon: <Globe className="w-5 h-5" />, level: 88 },
+    { name: 'MongoDB & MySQL', icon: <Database className="w-5 h-5" />, level: 86 },
+    { name: 'TensorFlow & NLP', icon: <Brain className="w-5 h-5" />, level: 84 },
+    { name: 'Docker & Redis', icon: <Server className="w-5 h-5" />, level: 82 },
+    { name: 'WebSockets & REST APIs', icon: <Server className="w-5 h-5" />, level: 87 },
+    { name: 'Solidity & Web3', icon: <Code className="w-5 h-5" />, level: 78 },
+    { name: 'Git & CI/CD', icon: <Terminal className="w-5 h-5" />, level: 88 },
   ];
   
   return (
@@ -31,8 +33,8 @@ export function About() {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6 rounded-full animate-width"></div>
           <p className="max-w-2xl mx-auto text-lg opacity-80 animate-typing">
-            I'm a Computer Science student with a passion for building innovative digital solutions
-            and creating beautiful, intuitive user experiences.
+            Software engineering student building scalable, real-time backend systems. 
+            Focused on reliability, performance optimization, and production behavior.
           </p>
         </div>
 
@@ -42,16 +44,13 @@ export function About() {
 
             <div className="space-y-4">
               <p className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-                I’m currently pursuing my B.Tech in Computer Science and Engineering at VNR VJIET, Hyderabad,
-                with interests spanning full-stack development, artificial intelligence, and problem-solving through design thinking.
+                I'm currently pursuing my B.Tech in Computer Science and Engineering at VNR VJIET, Hyderabad (2022-2026), with a focus on distributed systems, backend architecture, and real-time applications.
               </p>
               <p className="animate-fade-in" style={{ animationDelay: '400ms' }}>
-                My journey began with a love for logic and creativity, which led me to competitive programming and building real-world applications
-                through hackathons and projects like BioBlock and Flashcard Learning Tool.
+                My journey includes building production-ready systems like distributed task processors, load-balanced URL shorteners, and real-time collaboration platforms. I've worked extensively with Redis, Docker, WebSockets, and the MERN stack to create scalable solutions that handle high traffic and complex workloads.
               </p>
               <p className="animate-fade-in" style={{ animationDelay: '600ms' }}>
-                When I’m not coding, I lead initiatives at Google Developer Groups, explore design via Figma,
-                and contribute to community-based tech solutions that empower rural and underserved areas.
+                Beyond development, I serve as Management Lead at Google Developer Groups VNRVJIET, where I mentor 100+ students, organize technical workshops, and lead flagship initiatives in AI, Cloud, and distributed systems. I've competed in national hackathons, achieving top positions and solving 400+ DSA problems on LeetCode (max rating 1722, Top 12%).
               </p>
             </div>
 
@@ -92,8 +91,12 @@ export function About() {
 
                   <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-primary to-accent rounded-full transform transition-all duration-1000 animate-width"
-                      style={{ width: `${skill.level}%`, animationDelay: `${400 + index * 100}ms` }}
+                      className="h-full bg-gradient-to-r from-primary to-accent rounded-full transform transition-all duration-1000"
+                      style={{ 
+                        width: `${skill.level}%`,
+                        animation: `width-grow-${skill.level} 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards`,
+                        animationDelay: `${400 + index * 100}ms`
+                      }}
                     ></div>
                   </div>
                 </div>

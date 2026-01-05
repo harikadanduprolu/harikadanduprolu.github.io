@@ -11,63 +11,83 @@ export function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'Smart Study Planner',
-      description: 'AI-powered study schedule generator with task prioritization',
-      category: 'web',
-      image: 'https://via.placeholder.com/600x400/6C5CE7/FFFFFF',
-      technologies: ['React', 'Node.js', 'MongoDB', 'TensorFlow'],
+      title: 'Distributed Task Processing System',
+      description: 'Asynchronous job processing system with Redis-backed queue for background tasks. Implemented retry logic with exponential backoff, idempotent execution to prevent state inconsistencies, and containerized workers for horizontal scaling.',
+      category: 'backend',
+      image: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg',
+      technologies: ['Node.js', 'Redis', 'Docker', 'Bull Queue'],
       demoLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/harikadanduprolu'
     },
     {
       id: 2,
-      title: 'Sentiment Analysis Tool',
-      description: 'Machine learning model for analyzing text sentiment',
-      category: 'ai',
-      image: 'https://via.placeholder.com/600x400/FC427B/FFFFFF',
-      technologies: ['Python', 'PyTorch', 'Flask', 'NLTK'],
+      title: 'Load-Balanced URL Shortener',
+      description: 'Horizontally scalable URL shortening service optimized for read-heavy traffic. Nginx load balancing across stateless instances, Redis caching to reduce database reads, and evaluated consistency-performance tradeoffs.',
+      category: 'backend',
+      image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg',
+      technologies: ['Node.js', 'Redis', 'Nginx', 'Docker', 'MongoDB'],
       demoLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/harikadanduprolu'
     },
     {
       id: 3,
-      title: 'Inventory Management System',
-      description: 'Full-stack application for tracking inventory levels',
-      category: 'software',
-      image: 'https://via.placeholder.com/600x400/0652DD/FFFFFF',
-      technologies: ['TypeScript', 'Express', 'PostgreSQL', 'Docker'],
+      title: 'ProCollab – Real-Time Collaboration Platform',
+      description: 'Real-time document collaboration with WebSocket-based conflict resolution, supporting 20+ concurrent users with <100ms latency. Built operational transformation for simultaneous edits and Redis-based session management.',
+      category: 'fullstack',
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg',
+      technologies: ['React', 'Node.js', 'WebSockets', 'MongoDB', 'Redis'],
       demoLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/harikadanduprolu'
     },
     {
       id: 4,
-      title: 'Weather Dashboard',
-      description: 'Visualizing weather data with interactive charts',
-      category: 'web',
-      image: 'https://via.placeholder.com/600x400/9980FA/FFFFFF',
-      technologies: ['React', 'D3.js', 'Weather API', 'Tailwind CSS'],
+      title: 'Wellness AI – Mental Health Assistant',
+      description: 'NLP-powered wellness platform using BERT for emotion detection (87% accuracy). Privacy-first architecture with AES-256 encryption, confidence-based fallbacks, and crisis detection system.',
+      category: 'ai',
+      image: 'https://images.pexels.com/photos/3771082/pexels-photo-3771082.jpeg',
+      technologies: ['Python', 'TensorFlow', 'NLP', 'Flask', 'React'],
       demoLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/harikadanduprolu'
     },
     {
       id: 5,
-      title: 'Neural Network Playground',
-      description: 'Interactive tool for experimenting with neural networks',
+      title: 'Explainable AI for Medical Diagnosis',
+      description: 'Interpretable ML pipeline achieving 0.89 AUC-ROC with SHAP/LIME explanations. Addressed class imbalance and built model monitoring dashboard to detect prediction drift.',
       category: 'ai',
-      image: 'https://via.placeholder.com/600x400/1289A7/FFFFFF',
-      technologies: ['JavaScript', 'TensorFlow.js', 'Canvas API'],
+      image: 'https://images.pexels.com/photos/572056/pexels-photo-572056.jpeg',
+      technologies: ['Python', 'Scikit-learn', 'SHAP', 'LIME', 'Flask'],
       demoLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/harikadanduprolu'
     },
     {
       id: 6,
-      title: 'Compiler Design Project',
-      description: 'Simple compiler for a custom programming language',
-      category: 'software',
-      image: 'https://via.placeholder.com/600x400/A3CB38/FFFFFF',
-      technologies: ['C++', 'LLVM', 'Flex', 'Bison'],
+      title: 'Rural Aid – Community Development Platform',
+      description: 'Full-stack MERN platform connecting 500+ rural users with government schemes. Offline-first architecture with IndexedDB sync, optimized queries (800ms → 120ms), and multilingual support.',
+      category: 'fullstack',
+      image: 'https://images.pexels.com/photos/305965/pexels-photo-305965.jpeg',
+      technologies: ['MongoDB', 'Express.js', 'React', 'Node.js'],
       demoLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/harikadanduprolu'
+    },
+    {
+      id: 7,
+      title: 'BioBlock – Blockchain Bio-Economy',
+      description: 'Ethereum smart contracts for transparent bio-waste tracking and carbon credits. Gas-optimized contracts (40% cost reduction), Chainlink oracles for off-chain verification, multi-sig governance.',
+      category: 'blockchain',
+      image: 'https://images.pexels.com/photos/5775853/pexels-photo-5775853.jpeg',
+      technologies: ['Solidity', 'Ethereum', 'React', 'Web3.js', 'Firebase'],
+      demoLink: '#',
+      codeLink: 'https://github.com/harikadanduprolu'
+    },
+    {
+      id: 8,
+      title: 'Smackle – E-Commerce Platform',
+      description: 'Server-side rendered e-commerce with complete purchase flow. Normalized database schema, transaction-based inventory management, SQL injection prevention, and stateful order processing.',
+      category: 'backend',
+      image: 'https://images.pexels.com/photos/3945042/pexels-photo-3945042.jpeg',
+      technologies: ['Java', 'JSP', 'Servlets', 'MySQL', 'Tomcat'],
+      demoLink: '#',
+      codeLink: 'https://github.com/harikadanduprolu'
     }
   ];
   
@@ -77,11 +97,13 @@ export function Projects() {
   
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'web':
+      case 'fullstack':
         return <Globe className="w-4 h-4" />;
+      case 'backend':
+        return <Server className="w-4 h-4" />;
       case 'ai':
-        return <Brain className="w-4 h-4" />;
-      case 'software':
+        return <Code className="w-4 h-4" />;
+      case 'blockchain':
         return <Laptop className="w-4 h-4" />;
       default:
         return <Code className="w-4 h-4" />;
@@ -110,28 +132,36 @@ export function Projects() {
             All Projects
           </Button>
           <Button
-            variant={activeFilter === 'web' ? 'default' : 'outline'}
+            variant={activeFilter === 'fullstack' ? 'default' : 'outline'}
             className="rounded-full"
-            onClick={() => setActiveFilter('web')}
+            onClick={() => setActiveFilter('fullstack')}
           >
             <Globe className="w-4 h-4 mr-2" />
-            Web Development
+            Full-Stack
           </Button>
           <Button
             variant={activeFilter === 'ai' ? 'default' : 'outline'}
             className="rounded-full"
             onClick={() => setActiveFilter('ai')}
           >
-            <span className="w-4 h-4 mr-2">🧠</span>
-            AI & ML
+            <Code className="w-4 h-4 mr-2" />
+            AI/ML
           </Button>
           <Button
-            variant={activeFilter === 'software' ? 'default' : 'outline'}
+            variant={activeFilter === 'backend' ? 'default' : 'outline'}
             className="rounded-full"
-            onClick={() => setActiveFilter('software')}
+            onClick={() => setActiveFilter('backend')}
+          >
+            <Server className="w-4 h-4 mr-2" />
+            Backend
+          </Button>
+          <Button
+            variant={activeFilter === 'blockchain' ? 'default' : 'outline'}
+            className="rounded-full"
+            onClick={() => setActiveFilter('blockchain')}
           >
             <Laptop className="w-4 h-4 mr-2" />
-            Software
+            Blockchain
           </Button>
         </div>
         

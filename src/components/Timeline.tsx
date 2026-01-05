@@ -38,48 +38,48 @@ export function Timeline() {
   const timelineItems = [
     {
       id: 1,
-      date: '2023 - Present',
-      title: 'Computer Science Major',
-      location: 'Tech University',
-      description: 'Pursuing a Bachelor\'s degree in Computer Science with a focus on Artificial Intelligence and Machine Learning.',
-      icon: <GraduationCap className="w-5 h-5" />,
+      date: 'Sep 2025 - Present',
+      title: 'Management Lead',
+      location: 'Google Developer Groups, VNRVJIET',
+      description: 'Leading GDG-VNRVJIET operations, coordinating workshops, and managing a team of student organizers. Organized 15+ developer events including hackathons, study jams, and workshops, reaching over 2500 students.',
+      icon: <Briefcase className="w-5 h-5" />,
       color: 'from-blue-500 to-indigo-600'
     },
     {
       id: 2,
-      date: '2022 - 2023',
-      title: 'Software Development Intern',
-      location: 'InnovateTech Solutions',
-      description: 'Developed and maintained web applications using React and Node.js. Collaborated with a team of developers to implement new features and fix bugs.',
+      date: 'Oct 2024 - Sep 2025',
+      title: 'Coordinator',
+      location: 'Google Developer Groups, VNRVJIET',
+      description: 'Led technical workshops and speaker events for 500+ students. Coordinated flagship initiatives such as Gen AI Study Jam, AI Immersion Month, and Solution Challenge.',
       icon: <Briefcase className="w-5 h-5" />,
       color: 'from-emerald-500 to-teal-600'
     },
     {
       id: 3,
-      date: '2022',
-      title: 'UX/UI Design Certificate',
-      location: 'Design Academy',
-      description: 'Completed comprehensive training in user experience and interface design principles. Created wireframes, prototypes, and conducted usability testing for various applications.',
-      icon: <Palette className="w-5 h-5" />,
+      date: 'Oct 2023 - Sep 2024',
+      title: 'Volunteer',
+      location: 'Google Developer Groups, VNRVJIET',
+      description: 'Organized events that boosted participation by 30%. Contributed to community-based tech solutions and developer engagement initiatives.',
+      icon: <Briefcase className="w-5 h-5" />,
       color: 'from-amber-500 to-orange-600'
     },
     {
       id: 4,
-      date: '2021',
-      title: 'Web Development Certification',
-      location: 'Online Learning Platform',
-      description: 'Completed a comprehensive certification in full-stack web development, covering HTML, CSS, JavaScript, React, Node.js, and database management.',
-      icon: <Code className="w-5 h-5" />,
-      color: 'from-pink-500 to-rose-600'
+      date: '2022 - 2026',
+      title: 'B.Tech in Computer Science and Engineering',
+      location: 'VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad',
+      description: 'Pursuing Bachelor\'s degree with focus on distributed systems, backend architecture, and data structures. Coursework includes DBMS, Operating Systems, OOP, DSA, and Computer Networks.',
+      icon: <GraduationCap className="w-5 h-5" />,
+      color: 'from-purple-500 to-violet-600'
     },
     {
       id: 5,
-      date: '2020',
-      title: 'High School Graduation',
-      location: 'Science Academy',
-      description: 'Graduated with honors, focusing on mathematics and computer science courses. Led the school\'s robotics team to regional competitions.',
+      date: '2020 - 2022',
+      title: 'Intermediate Education',
+      location: 'Sri Chaitanya Junior College, Hyderabad',
+      description: 'Completed intermediate education with focus on Mathematics, Physics, and Chemistry. Developed foundational skills in problem-solving and analytical thinking.',
       icon: <GraduationCap className="w-5 h-5" />,
-      color: 'from-purple-500 to-violet-600'
+      color: 'from-pink-500 to-rose-600'
     }
   ];
   
@@ -92,7 +92,7 @@ export function Timeline() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6 rounded-full animate-width"></div>
           <p className="max-w-2xl mx-auto text-lg opacity-80 animate-fade-in">
-            My academic and professional journey in the field of computer science.
+            My journey through education, leadership roles, and technical community building.
           </p>
         </div>
         
