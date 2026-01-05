@@ -68,26 +68,6 @@ export function Projects() {
       technologies: ['MongoDB', 'Express.js', 'React', 'Node.js'],
       demoLink: '#',
       codeLink: 'https://github.com/harikadanduprolu'
-    },
-    {
-      id: 7,
-      title: 'BioBlock – Blockchain Bio-Economy',
-      description: 'Ethereum smart contracts for transparent bio-waste tracking and carbon credits. Gas-optimized contracts (40% cost reduction), Chainlink oracles for off-chain verification, multi-sig governance.',
-      category: 'blockchain',
-      image: 'https://images.pexels.com/photos/5775853/pexels-photo-5775853.jpeg',
-      technologies: ['Solidity', 'Ethereum', 'React', 'Web3.js', 'Firebase'],
-      demoLink: '#',
-      codeLink: 'https://github.com/harikadanduprolu'
-    },
-    {
-      id: 8,
-      title: 'Smackle – E-Commerce Platform',
-      description: 'Server-side rendered e-commerce with complete purchase flow. Normalized database schema, transaction-based inventory management, SQL injection prevention, and stateful order processing.',
-      category: 'backend',
-      image: 'https://images.pexels.com/photos/3945042/pexels-photo-3945042.jpeg',
-      technologies: ['Java', 'JSP', 'Servlets', 'MySQL', 'Tomcat'],
-      demoLink: '#',
-      codeLink: 'https://github.com/harikadanduprolu'
     }
   ];
   
